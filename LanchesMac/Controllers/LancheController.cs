@@ -20,6 +20,7 @@ namespace LanchesMac.Controllers
 
         public IActionResult List() 
         {
+            ViewData["Title"] = "List";
             ViewBag.Lanche = "Lanches";
             ViewData["Categoria"] = "Categoria";
 
