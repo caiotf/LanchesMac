@@ -1,20 +1,13 @@
 ﻿@*especifica o tipo de dados recebido pela view (a view é fortemente tipada)*@
-@model IEnumerable<Lanche>
+@model LancheListViewModel
 
-<div><h2>Todos os Lanches</h2></div>
+<div><h2>@Model.CategoriaAtual</h2></div>
 
 <div class="row">
-    @foreach (var lanche in Model) /*Model é a propiedade que acessa o tipo*/
+    @foreach (var lanche in Model.Lanches) /*Model é a propiedade que acessa o tipo*/
     {
-        <div class="col-md-4">
-            <div class="img-thumbnail">
-                <img src="@lanche.ImagemUrl" class="img-rounded" alt="" />
-            </div>
-            <div class="figure-caption">
-                <h3 class="pull-right">@lanche.Preco.ToString("c")</h3>
-                <h3>@lanche.Nome</h3>
-                <p>@lanche.DescricaoCurta</p>
-            </div>
-        </div>
+        @*@Html.Partial("_LanchesResumo", lanche);*@
+
+        <partial name="_lanchesResumo" for="@lanche" />
     }
 </div>

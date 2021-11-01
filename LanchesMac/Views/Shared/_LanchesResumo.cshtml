@@ -1,0 +1,12 @@
+﻿@model Lanche
+
+<div class="col-md-4">
+    <div class="img-thumbnail">
+        <img src="@Model.ImagemUrl" class="img-rounded" alt="" />
+    </div>
+    <div class="figure-caption">
+        <h3 class="pull-right">@Model.Preco.ToString("c")</h3>
+        <h3>@Model.Nome</h3>
+        <p>@Model.DescricaoCurta</p>
+    </div>
+</div>
